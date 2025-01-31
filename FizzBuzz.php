@@ -9,10 +9,9 @@
 			$this->num = $num;
 		}
 		
-		public function setNum( $num ) : int
+		public function setNum( $num ) : void
 		{
 			$this->num = $num;
-			return $this->num;
 		}
 		
 		public function getNum() : int
