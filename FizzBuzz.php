@@ -1,26 +1,44 @@
 <?php
 	
-	class FizzBuzz {
-		
+	class FizzBuzz
+	{
 		private int $num;
 		
-		public function __construct(int $num) {
+		public function __construct( int $num = 100 )
+		{
 			$this->num = $num;
 		}
 		
-		/**
-		 * @return int
-		 */
+		public function setNum( $num ) : int
+		{
+			$this->num = $num;
+			return $this->num;
+		}
+		
 		public function getNum() : int
 		{
 			return $this->num;
 		}
 		
-		/**
-		 * @param int $num
-		 */
-		public function setNum( int $num ) : void
+		public function fizzBuzz() : string
 		{
-			$this->num = $num;
+			$output = "";
+			foreach( range( 1, $this->getNum() ) as $number ) {
+				if( $number % 3 !== 0 && $number % 5 !== 0 ) {
+					$output .= $number . "<br/>";
+					continue;
+				}
+				
+				if( $number % 3 === 0 ) {
+					$output .= "Fizz";
+				}
+				
+				if( $number % 5 === 0 ) {
+					$output .= "Buzz";
+				}
+				
+				$output .= "<br/>";
+			}
+			return $output;
 		}
 	}
