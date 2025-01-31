@@ -1,17 +1,21 @@
-<!doctype html>
+<?php
+	
+	require_once './FizzBuzz.php';
+	
+	$fizzBuzz = new FizzBuzz();
+	$fizzBuzz->setNum( 100 );
+
+?>
+
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FizzBuzz</title>
 </head>
 <body>
-<?php
-	require_once "./FizzBuzz.php";
-	$fizz = new FizzBuzz();
-	$fizz->setNum( 650 );
-	echo $fizz->fizzBuzz();
-?>
+
+<h4><?= $fizzBuzz->fizzBuzz(); ?></h4>
 </body>
 </html>
